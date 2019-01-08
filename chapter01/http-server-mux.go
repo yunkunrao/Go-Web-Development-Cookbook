@@ -18,8 +18,12 @@ func helloWorld(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// This allocates and returns a new HTTP request multiplexer (ServeMux), which
+	// matches the URL of each incoming request against a list of registered patterns
+	// and calls the handler for the pattern that most closely matches the URL.
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", helloWorld)
+	// wraps our server with a .gzip handler to compress all responses in a .gzip format.
 	err := http.ListenAndServe(CONN_HOST+":"+CONN_PORT, handlers.CompressHandler(mux))
 	if err != nil {
 		log.Fatal("error starting http server : ", err)

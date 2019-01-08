@@ -39,3 +39,5 @@ func handleRequest(conn net.Conn) {
 	fmt.Print("Message Received from the client: ", string(message))
 	conn.Close()
 }
+
+// It can be tested in other terminal : echo -n "Hello to TCP server\n" | nc localhost 8080
