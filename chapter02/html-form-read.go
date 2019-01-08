@@ -23,6 +23,7 @@ func readForm(r *http.Request) *User {
 	r.ParseForm()
 	user := new(User)
 	decoder := schema.NewDecoder()
+	// r.PostForm is only available after ParseForm is called
 	decodeErr := decoder.Decode(user, r.PostForm)
 	if decodeErr != nil {
 		log.Printf("error mapping parsed form data to struct : ", decodeErr)

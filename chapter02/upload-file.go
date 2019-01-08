@@ -23,7 +23,7 @@ func fileHandler(w http.ResponseWriter, r *http.Request) {
 
 	defer file.Close()
 
-	out, pathError := os.Create("/tmp/uploadedFile")
+	out, pathError := os.Create("./tmp/uploadedFile")
 	if pathError != nil {
 		log.Printf("error creating a file for writing : ", pathError)
 		return
