@@ -16,6 +16,8 @@ const (
 var cookieHandler *securecookie.SecureCookie
 
 func init() {
+	// create SecureCookie passing a 64-byte hash key, which is used to authenticate values using HMAC and
+	// a 32-byte block key, which is used to encrypt values
 	cookieHandler = securecookie.New(securecookie.GenerateRandomKey(64), securecookie.GenerateRandomKey(32))
 }
 

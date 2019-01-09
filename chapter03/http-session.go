@@ -60,3 +60,7 @@ func main() {
 		return
 	}
 }
+
+// curl -X GET -i http://localhost:8080/login
+// curl --cookie "session-name=MTU0NjkzNjIxNXxEdi1CQkFFQ180SUFBUkFCRUFBQUpmLUNBQUVHYzNSeWFXNW5EQThBRFdGMWRHaGxiblJwWTJGMFpXUUVZbTl2YkFJQ0FBRT18pRHpCc2PmSBpoL4DFyKawlNNEWDW1o64wi219fOeP2I=" -X GET -i http://localhost:8080/home
+// curl -X GET -i http://localhost:8080/logout

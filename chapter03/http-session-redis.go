@@ -19,7 +19,7 @@ var store *redisStore.RediStore
 var err error
 
 func init() {
-	store, err = redisStore.NewRediStore(10, "tcp", ":6379", "", []byte("secret-key"))
+	store, err = redisStore.NewRediStore(10, "tcp", "ubuntu18:6379", "", []byte("secret-key"))
 	if err != nil {
 		log.Fatal("error getting redis store : ", err)
 	}
